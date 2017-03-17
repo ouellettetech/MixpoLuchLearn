@@ -1,12 +1,19 @@
-var a ='hello world';
-
-console.log(a);
-
-a = undefined;
-
-if (a === undefined){
-        console.log('a is undefined!');
+function a() {
+    let me = 3
+    var myVar = 2;
+    console.log(me)
+    b();
+    c();
+    function c(){
+        console.log(myVar)    
+    }
+    return c;
 }
-else{
-    console.log('a is defined!');
+
+function b(){
+    console.log(myVar)    
 }
+
+var myVar =1;
+a();
+a()()
