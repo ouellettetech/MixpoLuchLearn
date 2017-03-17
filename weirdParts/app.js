@@ -1,19 +1,16 @@
-function a() {
-    let me = 3
-    var myVar = 2;
-    console.log(me)
-    b();
-    c();
-    function c(){
-        console.log(myVar)    
-    }
-    return c;
+//Long Running Function
+function waitThreeSeconds(){
+    var ms = 3000 + new Date().getTime();
+    while(new Date() <ms ){}
+    console.log('finished function');
 }
 
-function b(){
-    console.log(myVar)    
+function clickHandler() {
+    console.log('click event!');
 }
 
-var myVar =1;
-a();
-a()()
+// listen for the click event
+document.addEventListener('click', clickHandler);
+
+waitThreeSeconds();
+console.log("finished execution");
