@@ -1,9 +1,3 @@
-var firstName = 'Jane';
-
-(function (lastName) {
-    var firstName = 'john';
-    console.log(firstName);
-    console.log(lastName);
-}('Doe'));
-
-console.log(firstName);
+ var greet = require('./greet');
+ greet.english();
+ greet.spanish();
