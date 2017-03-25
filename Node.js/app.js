@@ -1,21 +1,7 @@
-var EventEmitter = require('events');
-var util = require('util');
+var name = 'John Doe';
+var greet = 'Hello ' + name;
 
-function Greetr() {
-    this.greeting = 'Hello World!';
-}
+var greet2 = `Hello ${ name}`;
 
-util.inherits(Greetr, EventEmitter);
-
-Greetr.prototype.greet = function(data) {
-    console.log(this.greeting + ': '+ data);
-    this.emit('greet', data);
-};
-
-var greeter1 = new Greetr();
-
-greeter1.on('greet', function(data){
-    console.log("Somebody greeted!" + ': ' + data );
-});
-
-greeter1.greet('Brad');
+console.log(greet);
+console.log(greet2);
