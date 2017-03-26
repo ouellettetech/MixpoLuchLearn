@@ -1,5 +1,13 @@
-var buffer = new ArrayBuffer(8);
-var view = new Int32Array(buffer);
-view[0] = 5;
-view[1] = 15;
-console.log(view);
+var fs = require('fs');
+
+var greet = fs.readFileSync(__dirname + '/greet.txt',
+'utf8');
+console.log(greet);
+
+
+var greet2 = fs.readFile(__dirname + '/greet.txt','utf8',
+function(err, data) {
+    console.log(data);
+});
+
+console.log('Done!');
