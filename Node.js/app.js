@@ -1,21 +1,24 @@
-var http = require('http');
-var fs = require('fs');
+var moment =require('moment');
+console.log(moment().format("ddd, hA"));
 
-http.createServer(function(req, res) {
-    if(req.url === '/') {
-        fs.createReadStream(__dirname + '/index.html').pipe(res);
-    }
-    else if(req.url === '/api'){
-        res.writeHead(200,{ 'Content-Type': 'application/json'});
+// var http = require('http');
+// var fs = require('fs');
 
-        var obj = {
-            firstName: 'John',
-            lastName: 'Doe'
-        };
-        res.end(JSON.stringify(obj));
-    }
-    else {
-        res.writeHead(404);
-        res.end();
-    }
-}).listen(1337, '0.0.0.0');
+// http.createServer(function(req, res) {
+//     if(req.url === '/') {
+//         fs.createReadStream(__dirname + '/index.html').pipe(res);
+//     }
+//     else if(req.url === '/api'){
+//         res.writeHead(200,{ 'Content-Type': 'application/json'});
+
+//         var obj = {
+//             firstName: 'John',
+//             lastName: 'Doe'
+//         };
+//         res.end(JSON.stringify(obj));
+//     }
+//     else {
+//         res.writeHead(404);
+//         res.end();
+//     }
+// }).listen(1337, '0.0.0.0');
