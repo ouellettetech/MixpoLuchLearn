@@ -1,0 +1,9 @@
+FROM node:6
+
+EXPOSE 1337
+
+RUN mkdir -p /home/mixpo/web
+COPY * /home/mixpo/web/
+WORKDIR /home/mixpo/
+
+CMD ["node /home/mixpo/web/app.js" ]

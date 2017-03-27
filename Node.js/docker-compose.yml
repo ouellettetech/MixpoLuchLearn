@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+#  db:
+#    container_name: db
+#    image: mongo
+##    ports:
+##      - "5432:5432"
+##    volumes:
+##      - ../mixpo.com/db:/usr/src/app/db
+##      - /tmp/dbBackup:/tmp/dbBackup
+
+  node:
+    container_name: mynode
+#    image: ubertoad2.mixpo.com:5000/obsidian
+    build:
+      context: .
+      dockerfile: mynode
+    command: node /home/mixpo/web/app.js
+#    command: node app.js
+    ports:
+     - "1337:1337"
+#    volumes:
+#     - ~/.ssh/:/root/.ssh/
+#     - ../obsidian/:/home/mixpo
+#    links:
+#     - emerald
+#     - tomcat
+#    depends_on:
+#     - emerald
+#     - tomcat
