@@ -1,11 +1,7 @@
-var fs = require('fs');
-var zlib = require('zlib');
+var http = require('http');
 
-var readable = fs.createReadStream(__dirname + '/greet.txt', { encoding: 'utf8', highWaterMark: 1*1024});
-var writable = fs.createWriteStream(__dirname + '/greetcopy.txt');
-var compressed = fs.createWriteStream(__dirname + '/greet.txt.gz');
+http.createServer(function(req, res) {
+    res.writeHead(200,{ 'Content-Type': 'text/plain'});
+    res.end('Hello Wold!\n');
 
-var gzip = zlib.createGzip();
-readable.pipe(writable);
-
-readable.pipe(gzip).pipe(compressed);
+}).listen(1337, '127.0.0.1');
