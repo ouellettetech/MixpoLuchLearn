@@ -1,15 +1,10 @@
 var express = require('express');
 var app = express();
-var bodyParser = require('body-parser');
+
+var apiController = require('./controllers/apiController');
+var htmlController = require('./controllers/htmlController');
 
 var port = process.env.PORT || 1337
-
-var urlencodedParser = bodyParser.urlencoded({ extended: false });
-var jsonParser = bodyParser.json();
-
-app.get('/', function(req, res) {
-    res.render('index')
-});
 
 app.use('/assets', express.static(__dirname + '/public'));
 
@@ -20,27 +15,6 @@ app.use('/', function(req,res,next){
     next();
 });
 
-app.get('/person/:id', function(req, res) {
-    res.render('person', { ID: req.params.id , Qstr: req.query.qstr })
-});
-
-app.post('/person', urlencodedParser, function(req, res) {
-    res.send('Thank You for the Json Data!');
-    console.log(req.body.firstname);
-    console.log(req.body.lastname);
-});
-
-app.post('/api/person', jsonParser, function(req, res) {
-    //save to db.
-});
-
-app.get('/api/person/:id', function(req, res) {
-    // get that data from database
-    res.json({FirstName: 'John', lastName: 'Doe'});
-});
-
-app.delete('/api/person/:id', function(req,res){
-    // delete from the database
-});
-
+htmlController(app);
+apiController(app);
 app.listen(port);
