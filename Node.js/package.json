@@ -1,17 +1,15 @@
 {
-  "name": "nodejs-test-app",
+  "name": "nodetest",
   "version": "1.0.0",
-  "description": "NodeJS Test App",
+  "description": "",
   "main": "app.js",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "moment": "^2.18.1"
-  },
-  "devDependencies": {
-    "jasmine-node": "^1.14.5"
-  }
+  "license": "ISC"
 }
