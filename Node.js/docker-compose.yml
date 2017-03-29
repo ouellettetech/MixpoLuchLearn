@@ -1,14 +1,17 @@
 version: '2'
 
 services:
-#  db:
-#    container_name: db
-#    image: mongo
-##    ports:
-##      - "5432:5432"
-##    volumes:
-##      - ../mixpo.com/db:/usr/src/app/db
-##      - /tmp/dbBackup:/tmp/dbBackup
+  db:
+    container_name: db
+    image: mongo
+    build:
+      context: .
+      dockerfile: mongoDockerFile
+    ports:
+      - "27017:27017"
+#    volumes:
+#      - ../mixpo.com/db:/usr/src/app/db
+#      - /tmp/dbBackup:/tmp/dbBackup
 
   node:
     container_name: mynode
@@ -16,16 +19,12 @@ services:
     build:
       context: .
       dockerfile: mynode
-    command: node /home/mixpo/web/app.js
-#    command: node app.js
+    command: node /home/mixpo/app.js
     ports:
      - "1337:1337"
-#    volumes:
-#     - ~/.ssh/:/root/.ssh/
-#     - ../obsidian/:/home/mixpo
-#    links:
-#     - emerald
-#     - tomcat
-#    depends_on:
-#     - emerald
-#     - tomcat
+    volumes:
+     - .:/home/mixpo/
+    links:
+     - db
+    depends_on:
+     - db
