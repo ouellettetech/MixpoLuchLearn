@@ -2,8 +2,8 @@ FROM node:6
 
 EXPOSE 1337
 
-RUN mkdir -p /home/mixpo/web
-COPY * /home/mixpo/web/
+RUN mkdir -p /home/mixpo/
+COPY * /home/mixpo/
 WORKDIR /home/mixpo/
 
-CMD ["node /home/mixpo/web/app.js" ]
+CMD ["cd /home/mixpo/; node /home/mixpo/app.js" ]
