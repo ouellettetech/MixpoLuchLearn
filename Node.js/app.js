@@ -5,7 +5,6 @@ var mongoose = require('mongoose');
 var waitTill = new Date(new Date().getTime() + 10 * 1000);
 while(waitTill > new Date()){}
 
-
 mongoose.connect('mongodb://db:27017/addressbook');
 
 var Schema = mongoose.Schema;

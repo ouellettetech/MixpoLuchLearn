@@ -2,10 +2,21 @@ var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({ extended: false });
 var jsonParser = bodyParser.json();
 
+var people = [
+        {
+            name: 'John Doe'
+        },
+        {
+            name: 'Jane Doe'
+        },
+        {
+            name: 'Jim Doe'
+        }];
+
 module.exports = function(app){
 
     app.get('/', function(req, res) {
-        res.render('index')
+        res.render('index', {serverPeople: people });
     });
 
     app.get('/person/:id', function(req, res) {
