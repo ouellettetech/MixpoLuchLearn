@@ -1,0 +1,7 @@
+{
+    "uname": "",
+    "pwd": "",
+    "hostname": "db",
+    "port": "27017",
+    "dbName": "nodetodo"
+}
