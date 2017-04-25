@@ -7,14 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   showParagraph=false;
-  buttonClicked : number[]=[];
+  buttonClicked=[];
 
   getColor(item) {
     return item>4 ? 'blue' : 'green';
   }
   toggleParagraph() {
     var lastnumber=this.buttonClicked.length
-    this.buttonClicked.push(lastnumber);
+//    this.buttonClicked.push(lastnumber);
     this.showParagraph=!this.showParagraph;
+    this.buttonClicked.push(new Date());
   }
 }

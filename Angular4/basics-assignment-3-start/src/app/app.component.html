@@ -13,9 +13,9 @@
         (click)="toggleParagraph()">Display Details</button>
         <p *ngIf="showParagraph">Secret Password = tuna</p>
         <div 
-          *ngFor="let item of buttonClicked"
-          [ngStyle]="{backgroundColor: getColor(item)}"
-          [ngClass]="{moreThan5: item>4 }"
+          *ngFor="let item of buttonClicked; let i = index"
+          [ngStyle]="{backgroundColor: getColor(i)}"
+          [ngClass]="{moreThan5: i>4 }"
           >Clicked {{ item }} </div>
     </div>
   </div>
