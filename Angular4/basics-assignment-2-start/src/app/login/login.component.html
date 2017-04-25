@@ -1,0 +1,14 @@
+<p>
+  login works!
+</p>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="username">
+
+  <p> {{ username }} </p>
+
+<button 
+  class="btn btn-primary" 
+  [disabled]="!isResetAllowed()"
+  (click)="onClickReset()">Reset Login</button>
