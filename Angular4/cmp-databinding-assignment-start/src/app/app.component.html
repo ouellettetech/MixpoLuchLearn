@@ -15,3 +15,21 @@
     </div>
   </div>
 </div>
+
+<app-game-control
+  (gameEmiter)="onGameTrigger($event)"></app-game-control>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-6">
+      <app-odd
+        *ngFor="let curValue of oddNumbers"
+        [value]="curValue"></app-odd>
+    </div>
+    <div class="col-xs-6">
+      <app-even
+        *ngFor="let curValue of evenNumbers"
+        [value]="curValue"></app-even>
+    </div>
+  </div>
+</div>
