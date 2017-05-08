@@ -11,17 +11,17 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class RecipeDetailComponent implements OnInit {
   recipe: Recipe;
+  id: number;
   paramsSubscription: Subscription;
   constructor(private recipeService: RecipeService, 
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    const id = +this.route.snapshot.params['id'];
-    this.recipe = this.recipeService.getRecipes[id];
-    this.paramsSubscription = this.route.params
+    this.route.params
       .subscribe(
        (params: Params) => {
-         this.recipe = this.recipeService.getRecipes[+params['id']];
+         this.id = +params['id'];
+         this.recipe = this.recipeService.getRecipe(this.id);
        }
      );
   }
