@@ -9,8 +9,9 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
     @ViewChild('f') signupForm: NgForm;
-    defaultType = 'pro';
+    defaultType = 'Pro';
     submitted = false;
+    types = ['Basic', 'Pro', 'Advanced'];
 
     user = {
       email : '',
