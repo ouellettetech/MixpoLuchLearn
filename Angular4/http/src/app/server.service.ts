@@ -30,6 +30,14 @@ export class ServerSerice {
                 (error: Response) => {
                     return Observable.throw('Something went wrong');
                 }
+            );
+    }
+    getAppName() {
+        return this.http.get('https://udemy-ng-http-be9e7.firebaseio.com/appName.json')
+            .map(
+                (response: Response) => {
+                    return response.json();
+                }
             )
     }
 }
