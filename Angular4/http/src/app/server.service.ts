@@ -10,4 +10,8 @@ export class ServerSerice {
             servers,
             {headers: headers});
     }
+
+    getServers() {
+        return this.http.get('https://udemy-ng-http-be9e7.firebaseio.com/data.json');
+    }
 }
