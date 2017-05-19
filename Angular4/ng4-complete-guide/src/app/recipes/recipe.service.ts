@@ -3,6 +3,7 @@ import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
 import { ShoppingListService } from '../shopping-list/shopping-list.service';
 import { Subject } from 'rxjs/Subject';
+import { Http, Response } from '@angular/http';
 
 @Injectable()
 export class RecipeService {
@@ -27,7 +28,8 @@ export class RecipeService {
             ])
     ];
 
-    constructor(private shoppingListService: ShoppingListService) {}
+    constructor(private shoppingListService: ShoppingListService,
+        private http: Http) {}
 
     getRecipes() {
         return this.recipes.slice();
@@ -52,5 +54,10 @@ export class RecipeService {
     deleteRecipe(index: number) {
         this.recipes.splice(index, 1 );
         this.recipesChanged.next(this.recipes.slice());
+    }
+
+    storeRecipes() {
+        return this.http.put('https://ng-recipe-book-90414.firebaseio.com/recipes.json',
+            this.recipes);
     }
 }
