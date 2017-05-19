@@ -13,8 +13,11 @@ export class DataStorageService {
     }
 
     getRecipes() {
-        return this.http.get('https://ng-recipe-book-90414.firebaseio.com/recipes.json')
-            .map(
-                (response: Response) =>;
+        this.http.get('https://ng-recipe-book-90414.firebaseio.com/recipes.json')
+            .subscribe(
+                (response: Response) => {
+                    const recipes = response.json();
+                    this.recipeService.setRecipes(recipes);
+                });
     }
 }
