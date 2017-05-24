@@ -10,7 +10,6 @@ import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-ed
 import { DropdownDirective } from './shared/dropdown.directive';
 import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app-routing.module';
-import { NonSelectedComponent } from './recipes/recipe-list/non-selected/non-selected.component';
 import { RecipeService } from './recipes/recipe.service';
 import { DataStorageService } from './shared/data-storage.service';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -26,7 +25,6 @@ import { RecipesModule } from './recipes/recipes.module';
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
-    NonSelectedComponent,
     SignupComponent,
     SigninComponent
   ],
