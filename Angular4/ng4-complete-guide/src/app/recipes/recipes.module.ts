@@ -10,8 +10,7 @@ import { NonSelectedComponent } from './recipe-list/non-selected/non-selected.co
 import { RecipeItemComponent } from './recipe-list/recipe-item/recipe-item.component';
 import { RecipesRoutingModule } from './recipes-routing.module';
 
-import { DropdownDirective } from '../shared/dropdown.directive';
-
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -27,6 +26,7 @@ import { DropdownDirective } from '../shared/dropdown.directive';
         CommonModule,
         ReactiveFormsModule,
         RecipesRoutingModule,
+        SharedModule,
 
     ]
 })
