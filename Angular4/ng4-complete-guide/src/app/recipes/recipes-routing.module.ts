@@ -21,7 +21,8 @@ import { AuthGuard } from '../auth/auth-guard.service';
     imports: [
         RouterModule.forChild(recipeRoutes)
     ],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [AuthGuard],
 })
 export class RecipesRoutingModule {
 
