@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes, group } from '@angular/animations';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
+	selector: 'app-root',
+	templateUrl: './app.component.html',
 	animations: [
 		trigger('divState', [
 			state('normal', style({
@@ -58,10 +58,10 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
 			]),
 			transition('* => void', [
 				animate(300,
-				style({
-					opacity: 0,
-					transform: 'translatex(100px)'
-				}))
+					style({
+						opacity: 0,
+						transform: 'translatex(100px)'
+					}))
 			]),
 		]),
 		trigger('list2', [
@@ -95,11 +95,17 @@ import { trigger, state, style, transition, animate, keyframes } from '@angular/
 				]))
 			]),
 			transition('* => void', [
-				animate(300,
-				style({
-					opacity: 0,
-					transform: 'translatex(100px)'
-				}))
+				group([
+					animate(800,
+						style({
+							opacity: 0,
+							transform: 'translatex(100px)'
+						})),
+					animate(300,
+						style({
+							color: 'red'
+						})),
+					])
 			]),
 		]),
 	]
@@ -121,7 +127,7 @@ export class AppComponent {
 		this.state == 'normal' ? this.state = 'highlighted' : this.state = 'normal'
 		this.wildState == 'normal' ? this.wildState = 'highlighted' : this.wildState = 'normal'
 	}
-	
+
 	onShrink() {
 		this.wildState = 'shrunken';
 	}
