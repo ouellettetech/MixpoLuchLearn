@@ -1,10 +1,10 @@
-import { CompleteGuidePage } from './app.po';
+import { NewCliPage } from './app.po';
 
-describe('complete-guide App', function() {
-  let page: CompleteGuidePage;
+describe('new-cli App', () => {
+  let page: NewCliPage;
 
   beforeEach(() => {
-    page = new CompleteGuidePage();
+    page = new NewCliPage();
   });
 
   it('should display message saying app works', () => {
