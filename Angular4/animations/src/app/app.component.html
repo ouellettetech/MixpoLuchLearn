@@ -33,4 +33,21 @@
       </ul>
     </div>
   </div>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <input type="text" #input>
+      <button class="btn btn-primary" (click)="onAdd(input.value)">Add Item!</button>
+      <hr>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          (click)="onDelete(item)"
+          [@list2]
+          *ngFor="let item of list">
+          {{ item }}
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
