@@ -28,4 +28,8 @@ export class AppComponent {
 	onDelete(item) {
 		this.list.splice(this.list.indexOf(item), 1);
 	}
+
+	onAnimate() {
+		this.state == 'normal' ? this.state = 'highlighted' : this.state = 'normal'
+	}
 }
