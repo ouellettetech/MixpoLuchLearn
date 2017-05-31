@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
     templateUrl: './users.component.html',
-    styleUrls: ['./users.component.css'],
+    styleUrls: ['./users.component.css']
 })
 
 
