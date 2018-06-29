@@ -1,0 +1,184 @@
+<html>
+<head>
+    <title> Web Page with Style</title>
+    <style type="text/css">
+    
+/*
+        p {
+            color:red;
+            font-size:200%;
+        }
+        h1 {
+            color: blue;
+        }
+*/
+        .red {
+            color:red;
+        }
+        .large {
+            font-size: 200%;
+        }
+        
+        #green {
+            color: darkcyan;
+        }
+        .underlined {
+            text-decoration: underline;
+        }
+        
+/*        #first-section {
+            color: blueviolet;
+            background-color: pink;
+            width: 200px;
+            float:right;
+        }
+        #second-section {
+            background-color: yellow;
+            width:200px;
+            float:left;
+        }
+        .clear-float {
+            clear:both;
+        }
+        */
+/*
+        #first-section {
+            color: blueviolet;
+            background-color: pink;
+            width: 200px;
+            position:relative;
+            left: -50px;
+            top: 100px;
+        }
+        #second-section {
+            background-color: yellow;
+            width:200px;
+            position: relative;
+            left: 100px;
+            top: -100px;
+        }
+*/
+        
+/*
+        #first-section {
+            color: blueviolet;
+            background-color: pink;
+            width: 200px;
+            position:relative;
+            left: -50px;
+            top: 100px;
+            z-index:1;
+            opacity: .50;
+        }
+        #second-section {
+            background-color: yellow;
+            width:200px;
+            position: relative;
+            left: 100px;
+        }
+*/
+        
+/*
+        #first-section {
+            color: blueviolet;
+            background-color: pink;
+            width: 200px;
+            position:absolute; /* Takes out of the page flow 
+            left: 500px;
+            top: 200px;
+        }
+        #second-section {
+            background-color: yellow;
+            width:400px;
+        }
+        
+*/
+        
+ /*       #first-section {
+            color: blueviolet;
+            background-color: pink;
+            width: 200px;
+            position:fixed; /* doesn't scroll.'*//*
+            left: 500px;
+            top: 200px;
+        }
+        #second-section {
+            background-color: yellow;
+            width:400px;
+            height: 5000px;
+        }
+        */
+        
+        
+/*        #first-section {
+            color: blueviolet;
+            background-color: pink;
+            width: 200px;
+            margin: 100px 50px 20px 50px; /* Top Right Bottom Left *//*
+            margin-left: 150px;
+        }
+        #second-section {
+            background-color: yellow;
+            width:400px;
+            /* Margins 50px top and bottom, 20px left/right *//*
+            margin: 50px 20px;
+            margin: 50px 20px 50px 20px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-left: 20px;
+            margin-right: 20px;
+            
+        }
+        */
+        
+        #first-section {
+            color: blueviolet;
+            background-color: pink;
+            width: 200px;
+            margin: 100px 50px 20px 50px; /* Top Right Bottom Left */
+            margin-left: 150px;
+            padding: 5px;
+        }
+        #second-section {
+            background-color: yellow;
+            width:400px;
+            /* Margins 50px top and bottom, 20px left/right */
+            margin: 50px 20px;
+            margin: 50px 20px 50px 20px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            margin-left: 20px;
+            margin-right: 20px;
+            padding: 10px 50px 5px 70px; /* padding is added to width */
+        }
+        
+        body {
+            margin:0;
+            padding:0;
+        }
+        
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    </head>
+    <body>
+    
+<!--
+        <p style="color:blue;font-size:200%"> Hello Everybody! The quick brown fox jumped over the lazy dog.</p>
+        <h1 style="color:green;font-size:250%">CSS is Cool</h1>
+-->
+        
+        <div id="first-section">
+            <p class="red"> Hello Everybody! The quick brown fox jumped over the lazy dog.</p>
+            <p>Wow I love internal CSS!</p>
+        </div>
+        <div id="second-section">
+            <p id="green"> This is some more text. <span class="underlined"> And this text is underlined.</span></p>
+            <h1>CSS is Cool</h1>
+        </div>
+        <p> Before Clearing floats</p>
+        <div class="clear-float"></div>
+        <p> This paragraph is not floated!</p>
+    </body></html>
